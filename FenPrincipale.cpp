@@ -329,12 +329,11 @@ void FenPrincipale::chargerPage() //! load page
     QString url = champAdresse->text();
 
     //! On rajoute le "http://" s'il n'est pas deja dans l'adresse
-    if (url.left(7) != "http://")
+    if (url.left(7) != "http://" && url.left(8) != "https://")
     {
         url = "http://" + url;
         champAdresse->setText(url);
     }
-
 
 
     pageActuelle()->load(QUrl(url));
@@ -469,7 +468,7 @@ void FenPrincipale::showHelp()
 
 void FenPrincipale::plusGrandSlot()
 {
-
+    //pageActuelle()->setTextSizeMultiplier(15);
 }
 
 

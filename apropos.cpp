@@ -30,7 +30,7 @@ Apropos::Apropos(QWidget *parent) :
     gplLabel->setPixmap(monPixmap);
     gplLabel->setAlignment(Qt::AlignCenter);
 
-    txte1->setText(tr("zNavigator 1.0 by David Remacle\n\nThis program is under Licence GPL 3.0\n\nVersion 0.0.1"));
+    txte1->setText(tr("Navigator 1.0 by David Remacle\n\nThis program is under Licence GPL 3.0\n\nVersion 0.0.1"));
 
     layoutAbout->addWidget(IconLabel);
     layoutAbout->addWidget(txte1);
