@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/accueil.png</file>
+        <file>images/actualiser.png</file>
+        <file>images/go.png</file>
+        <file>images/precedente.png</file>
+        <file>images/stop.png</file>
+        <file>images/suivante.png</file>
+        <file>images/znavigo.png</file>
+        <file>images/index.html</file>
+        <file>images/icones_02881.png</file>
+        <file>images/iconApp.png</file>
+        <file>images/gpl-3.0-standalone.html</file>
+        <file>images/gplv3-88x31.png</file>
+        <file>images/gplv3-127x51.png</file>
+    </qresource>
+</RCC>
