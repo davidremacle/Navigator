@@ -1,7 +1,7 @@
 #include "apropos.h"
 
 
-//! Construtor of About window (this is a widget).
+//! Construtor of About window (this is a widget for a propos window).
 Apropos::Apropos(QWidget *parent) :
     QWidget(parent)
 {
