@@ -25,7 +25,7 @@
         <item>
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>Page d'acceuil :</string>
+           <string>Home</string>
           </property>
          </widget>
         </item>
@@ -46,7 +46,7 @@
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Moteur de recherche :</string>
+        <string>search site: </string>
        </property>
       </widget>
      </item>
@@ -54,12 +54,12 @@
       <widget class="QComboBox" name="MotRechCombo">
        <item>
         <property name="text">
-         <string>Google.be</string>
+         <string>Google</string>
         </property>
        </item>
        <item>
         <property name="text">
-         <string>Yahoo.fr</string>
+         <string>Yahoo</string>
         </property>
        </item>
        <item>

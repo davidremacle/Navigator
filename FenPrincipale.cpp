@@ -306,6 +306,7 @@ void FenPrincipale::nouvelOnglet() //! new tab in window
 {
     int indexNouvelOnglet = onglets->addTab(creerOngletPageWeb(), tr("(Nouvelle page)"));
     onglets->setCurrentIndex(indexNouvelOnglet);
+    pageActuelle()->setContextMenuPolicy(Qt::CustomContextMenu);
 
     champAdresse->setText("");
     champAdresse->setFocus(Qt::OtherFocusReason);
@@ -489,3 +490,5 @@ QWebView *FenPrincipale::pageActuelle()
 {
     return onglets->currentWidget()->findChild<QWebView *>();
 }
+
+

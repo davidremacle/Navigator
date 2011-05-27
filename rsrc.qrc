@@ -13,5 +13,7 @@
         <file>images/gpl-3.0-standalone.html</file>
         <file>images/gplv3-88x31.png</file>
         <file>images/gplv3-127x51.png</file>
+        <file>images/lgpl-2.1-standalone.html</file>
+        <file>images/gpl-2.0-standalone.html</file>
     </qresource>
 </RCC>

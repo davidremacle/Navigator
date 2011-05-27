@@ -17,6 +17,8 @@
 #include <QtGui>
 #include <QtWebKit>
 #include <QSystemTrayIcon>
+#include <QWebHistory>
+#include <QWebHistoryItem>
 
 #include "rsswidget.h"
 
@@ -83,6 +85,8 @@ class FenPrincipale : public QMainWindow
         void showHelp();
         void plusGrandSlot();
         void plusPetitSlot();
+
+
 
 
 
