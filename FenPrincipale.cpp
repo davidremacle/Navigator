@@ -14,7 +14,7 @@
 #include "prefdialog.h"
 #include "historique.h"
 #include "apropos.h"
-#include "CookieJar.h"
+//#include "CookieJar.h"
 #include "helpbrowser.h"
 
 
@@ -414,10 +414,13 @@ QWidget *FenPrincipale::creerOngletPageWeb(QString url) //! Create widget whith 
         {
             url = "http://" + url;
         }
+       // pageWeb()->page()->networkAccessManager()->setCookieJar(new CookieJar(this));
         pageWeb->load(QUrl(url));
     }
 
-    //pageWeb()->page()->networkAccessManager()->setCookieJar(new CookieJar(this));
+
+
+
 
     //! Gestion des signaux envoyes par la page web
     connect(pageWeb, SIGNAL(titleChanged(QString)), this, SLOT(changementTitre(QString)));

@@ -25,6 +25,7 @@
 #include "mytoolbar.h"
 
 #include "bookmarksdialog.h"
+#include "CookieJar.h"
 
 //! Mainwindow of the App
 
