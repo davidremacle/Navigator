@@ -28,7 +28,7 @@ Apropos::Apropos(QWidget *parent) :
     closeButton->setShortcut(tr("Esc"));
     //gplLabel = new QLabel;
     //gplLabel->setPixmap(monPixmap);
-    //gplLabel->setAlignment(Qt::AlignCenter);
+    /*gplLabel->setAlignment(Qt::AlignCenter); */
 
     txte1->setText(tr("Navigator 1.0 by David Remacle\n\nThis program is under Licence GPL V2.1\n\nVersion 0.0.1"));
 

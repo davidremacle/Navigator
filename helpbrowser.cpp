@@ -12,7 +12,7 @@ HelpBrowser::HelpBrowser(const QString &path, const QString &page, QWidget *pare
 
     homeButton = new QPushButton(tr("&Home"));
     backButton = new QPushButton(tr("&Back"));
-    closeButton = new QPushButton(tr("Close"));
+    closeButton = new QPushButton(tr("&Close"));
     closeButton->setShortcut(tr("Esc"));
 
     QHBoxLayout *buttonLayout = new QHBoxLayout;

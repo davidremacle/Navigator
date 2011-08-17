@@ -16,6 +16,7 @@ public:
     explicit Historique(QWidget *parent = 0);
     ~Historique();
 
+
 private:
     Ui::Historique *ui;
 };

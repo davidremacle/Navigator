@@ -19,6 +19,9 @@
 #include <QSystemTrayIcon>
 #include <QWebHistory>
 #include <QWebHistoryItem>
+#include <QWebPage>
+#include <QWebElement>
+#include <QWebSettings>
 
 #include "rsswidget.h"
 
@@ -26,6 +29,10 @@
 
 #include "bookmarksdialog.h"
 #include "CookieJar.h"
+
+#include "prefdialog.h"
+#include "historique.h"
+#include "apropos.h"
 
 //! Mainwindow of the App
 
@@ -128,7 +135,7 @@ class FenPrincipale : public QMainWindow
         QLineEdit *champAdresse; /*! <champ ou l'utilisateur indique le site a acceder */
         QProgressBar *progression ; /*! <barre de progression pour le telechargement du site */
 
-
+        Ui::Historique *ui2;
 
         //myToolBar *mybarr;
 

@@ -4,9 +4,9 @@
   * \author Mateo21, David Remacle
   * \version 0.1
   *
-  * FenPrincipale est la fenetre principale de l'application.
-  * Cette fenetre defini les menu et la mise en page de la fenetre
-  * principale.
+  * FenPrincipale is the main window of the app.
+  *
+  *
   *
   */
 
@@ -14,10 +14,12 @@
 #include "prefdialog.h"
 #include "historique.h"
 #include "apropos.h"
-//#include "CookieJar.h"
+#include "CookieJar.h"
 #include "helpbrowser.h"
 
-
+/*! to do : bug fixe with CookieJar.
+ *          if CookieJar.h is enabled, the app would not compile
+ */
 
 
 
@@ -338,6 +340,8 @@ void FenPrincipale::chargerPage() //! load page
 
 
     pageActuelle()->load(QUrl(url));
+
+
 }
 
 void FenPrincipale::changementOnglet(int index) //! change tab
@@ -486,6 +490,9 @@ void FenPrincipale::plusPetitSlot()
 void FenPrincipale::montrerHistorique()
 {
     Historique histor;
+
+
+
     histor.exec();
 }
 
