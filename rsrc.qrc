@@ -15,5 +15,8 @@
         <file>images/gplv3-127x51.png</file>
         <file>images/lgpl-2.1-standalone.html</file>
         <file>images/gpl-2.0-standalone.html</file>
+        <file>icone.icns</file>
+        <file>images/Zoom-In-icon.png</file>
+        <file>images/Zoom-Out-icon.png</file>
     </qresource>
 </RCC>

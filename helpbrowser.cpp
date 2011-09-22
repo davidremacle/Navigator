@@ -34,6 +34,8 @@ HelpBrowser::HelpBrowser(const QString &path, const QString &page, QWidget *pare
     textBrowser->setSearchPaths(QStringList() << path << ":/images");
     textBrowser->setSource(page);
 
+    setFixedSize(550,400);
+
 }
 
 void HelpBrowser::updateWindowTitle()

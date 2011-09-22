@@ -37,7 +37,7 @@ Apropos::Apropos(QWidget *parent) :
     //layoutAbout->addWidget(gplLabel);
     layoutAbout->addWidget(closeButton);
 
-    setWindowTitle(tr("About ZNavigator"));
+    setWindowTitle(tr("About Navigator"));
 
 
     connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));

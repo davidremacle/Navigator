@@ -4,9 +4,14 @@
 
 TEMPLATE = app
 QT += webkit network xml
-TARGET = 
+TARGET = Navigator
 DEPENDPATH += .
 INCLUDEPATH += .
+
+
+mac{
+ICON = icone.icns
+}
 
 
 # Input

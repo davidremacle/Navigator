@@ -19,6 +19,8 @@ PrefDialog::PrefDialog(QWidget *parent) :
 
     setWindowTitle(tr("Preferences"));
 
+    setFixedSize(400,200);
+
 }
 
 PrefDialog::~PrefDialog() //! Destructeur prefDialog

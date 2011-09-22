@@ -63,6 +63,8 @@ class FenPrincipale : public QMainWindow
         QWidget *creerOngletPageWeb(QString url = "");
         QWebView *pageActuelle();
 
+        QWebSettings *webSettings;
+
     private slots:
         void precedente();
         void suivante();

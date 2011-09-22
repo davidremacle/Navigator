@@ -35,6 +35,7 @@ FenPrincipale::FenPrincipale()
 
     QString stringPref = settings->value("home").toString();
 
+
     setAnimated(false);
 
     creerActions();
@@ -137,6 +138,13 @@ void FenPrincipale::creerActions()
     actionPrefWindow->setShortcut(tr("Ctrl+,"));
     connect(actionPrefWindow, SIGNAL(triggered()), this, SLOT(lancerPreference()));
 
+    actionPlusGrand = new QAction(QIcon(":/images/Zoom-In-icon.png"), tr("Zoom avant"), this);
+    connect(actionPlusGrand, SIGNAL(triggered()), this, SLOT(plusGrandSlot()));
+    actionPlusGrand->setShortcut(tr("Ctrl++"));
+    actionPlusPetit = new QAction(QIcon(":/images/Zoom-Out-icon.png"), tr("Zoom arrière"), this);
+    connect(actionPlusPetit, SIGNAL(triggered()), this, SLOT(plusPetitSlot()));
+    actionPlusPetit->setShortcut(tr("Ctrl+-"));
+
     actionShowHistorique = new QAction(tr("Show History"), this);
     actionShowHistorique->setShortcut(tr("Ctrl+"));
     connect(actionShowHistorique, SIGNAL(triggered()), this, SLOT(montrerHistorique()));
@@ -170,13 +178,16 @@ void FenPrincipale::creerMenus()
     menuFichier->addSeparator();
     menuFichier->addAction(actionQuitter);
 
-    QMenu *menuNavigation = menuBar()->addMenu(tr("&Navigation"));
+    QMenu *menuNavigation = menuBar()->addMenu(tr("&Présentation"));
 
     menuNavigation->addAction(actionPrecedente);
     menuNavigation->addAction(actionSuivante);
     menuNavigation->addAction(actionStop);
     menuNavigation->addAction(actionActualiser);
     menuNavigation->addAction(actionAccueil);
+    menuNavigation->addSeparator();
+    menuNavigation->addAction(actionPlusGrand);
+    menuNavigation->addAction(actionPlusPetit);
 
     QMenu *menuBookmark = menuBar()->addMenu(tr("&Bookmarks"));
     menuBookmark->addAction(showBookmarks);
@@ -220,7 +231,9 @@ void FenPrincipale::creerBarresOutils()
     toolBarNavigation->addAction(actionAccueil);
     toolBarNavigation->addWidget(champAdresse);
     toolBarNavigation->addAction(actionGo);
+    toolBarNavigation->addSeparator();
     toolBarNavigation->addWidget(champGoogle);
+
     //toolBarNavigation->addWidget(mybarr);
 }
 
@@ -240,7 +253,7 @@ void FenPrincipale::creerBarreEtat()
     progression = new QProgressBar(this);
     progression->setVisible(false);
     progression->setMaximumHeight(14);
-    statusBar()->addWidget(progression, 1);
+    statusBar()->addPermanentWidget(progression);
 }
 
 void FenPrincipale::creerDockRSSWidget()
@@ -403,6 +416,9 @@ QWidget *FenPrincipale::creerOngletPageWeb(QString url) //! Create widget whith 
     QWidget *pageOnglet = new QWidget;
     QWebView *pageWeb = new QWebView;
 
+    webSettings = pageWeb->settings();
+    webSettings->setAttribute(QWebSettings::PluginsEnabled, true);
+
     QVBoxLayout *layout = new QVBoxLayout;
     layout->setContentsMargins(0,0,0,0);
     layout->addWidget(pageWeb);
@@ -476,14 +492,14 @@ void FenPrincipale::showHelp()
 
 void FenPrincipale::plusGrandSlot()
 {
-    //pageActuelle()->setTextSizeMultiplier(15);
+    pageActuelle()->setZoomFactor(+1.5);
 }
-
 
 void FenPrincipale::plusPetitSlot()
 {
-
+    pageActuelle()->setZoomFactor(+1);
 }
+
 
 //! ouverture de la boite de dialogue de l'historique
 
@@ -498,6 +514,8 @@ void FenPrincipale::montrerHistorique()
 
 QWebView *FenPrincipale::pageActuelle()
 {
+
+
     return onglets->currentWidget()->findChild<QWebView *>();
 }
 
