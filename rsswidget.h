@@ -12,10 +12,16 @@ public:
 
 signals:
 
+private slots:
+    void getrss();
+
 public slots:
 
 public:
     QTreeWidget* rssTreeWidget;
+    QLineEdit *rssAdress;
+private:
+
 
 };
 

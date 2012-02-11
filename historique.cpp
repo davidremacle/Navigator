@@ -13,6 +13,12 @@ Historique::Historique(QWidget *parent) :
 
     setWindowTitle(tr("Historique"));
 
+    FenPrincipale fenacc;
+
+    QString historItem;
+
+    historItem = fenacc.monHistorique->currentItem().url().toString();
+
 
 }
 

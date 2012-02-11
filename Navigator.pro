@@ -8,7 +8,6 @@ TARGET = Navigator
 DEPENDPATH += .
 INCLUDEPATH += .
 
-
 mac{
 ICON = icone.icns
 }

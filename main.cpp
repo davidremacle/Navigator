@@ -12,6 +12,8 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
+     QApplication::setDesktopSettingsAware(false);
+
 
     QWebSettings::globalSettings()->setAttribute(QWebSettings::PluginsEnabled, true);
     QWebSettings::globalSettings()->setAttribute(QWebSettings::AutoLoadImages, true);

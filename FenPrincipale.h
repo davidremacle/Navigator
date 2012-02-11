@@ -50,6 +50,8 @@ class FenPrincipale : public QMainWindow
     public:
         FenPrincipale();
 
+        QWebHistory *monHistorique;
+
     public slots:
         void aurevoir();
 

@@ -79,7 +79,9 @@ FenPrincipale::FenPrincipale()
         break;
     }
 
+    monHistorique = new QWebHistory;
 
+    //settings()->globalSettings()->setAttribute(QWebSettings::PluginsEnabled, true);
 
 
 }
@@ -192,6 +194,9 @@ void FenPrincipale::creerMenus()
     QMenu *menuBookmark = menuBar()->addMenu(tr("&Bookmarks"));
     menuBookmark->addAction(showBookmarks);
 
+    QMenu *menuTools = menuBar()->addMenu(tr("&Tools"));
+    menuTools->addAction(afficherRSS);
+
 
     MenuHistorique = menuBar()->addMenu(tr("H&istory"));
     MenuHistorique->addAction(actionShowHistorique);
@@ -209,6 +214,8 @@ void FenPrincipale::creerMenus()
 
 }
 
+
+
 void FenPrincipale::creerBarresOutils()
 {
     champAdresse = new QLineEdit;
@@ -218,7 +225,8 @@ void FenPrincipale::creerBarresOutils()
     connect(champGoogle, SIGNAL(returnPressed()), this, SLOT(rechercherGoogle()));
     champGoogle->setToolTip(tr("Champ de recherche."));
 
-    actionPrecedente->setToolTip(tr("page precedente\naffiche la page precedente"));
+    actionPrecedente->setToolTip(tr("Affiche la page précédente de l'historique."));
+    actionSuivante->setToolTip(tr("Affiche la page suivante dans l'historique."));
 
     //mybarr = new myToolBar;
 
@@ -258,18 +266,17 @@ void FenPrincipale::creerBarreEtat()
 
 void FenPrincipale::creerDockRSSWidget()
 {
-    /*rssWidget = new QDockWidget("RSS", this, Qt::Sheet);
+    rssWidget = new QDockWidget("RSS", this);
     monRSSWidget = new RSSWidget;
 
     rssWidget->setWidget(monRSSWidget);
 
-    rssWidget->setFeatures(QDockWidget::DockWidgetClosable);
-    rssWidget->setFeatures(QDockWidget::DockWidgetMovable);
-    rssWidget->setFeatures(QDockWidget::DockWidgetVerticalTitleBar);
+    rssWidget->setFeatures(QDockWidget::AllDockWidgetFeatures);
+
 
     addDockWidget(Qt::LeftDockWidgetArea, rssWidget);
 
-    rssWidget->show(); */
+    rssWidget->show();
 }
 
 
@@ -481,6 +488,7 @@ void FenPrincipale::rechercherGoogle()
         break;
     case 3:
         pageActuelle()->load(QUrl("http://www.altavista/search?q=" + rechGoog));
+        break;
     }
 }
 
@@ -505,11 +513,26 @@ void FenPrincipale::plusPetitSlot()
 
 void FenPrincipale::montrerHistorique()
 {
-    Historique histor;
+    Historique *histor = new Historique;
+
+    histor->exec();
+
+    /*bool ok = false;
+        QString pseudo = QInputDialog::getText(this, "Pseudo", "Quel est votre pseudo ?", QLineEdit::Normal, QString(), &ok);
+
+        if (ok && !pseudo.isEmpty())
+        {
+            QMessageBox::information(this, "Pseudo", "Bonjour " + pseudo + ", ça va ?");
+        }
+        else
+        {
+            QMessageBox::critical(this, "Pseudo", "Vous n'avez pas voulu donner votre nom... snif.");
+        }
+
+        */
 
 
 
-    histor.exec();
 }
 
 QWebView *FenPrincipale::pageActuelle()
